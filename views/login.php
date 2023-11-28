@@ -26,13 +26,13 @@
             
             <div>
                 <label for="">
-                    <input type="text" placeholder=" Email" name="correo" class="p-1 w-80 rounded-lg border">
+                    <input type="text" placeholder=" Email" name="correo" class="p-1 w-80 rounded-lg border" required>
                 </label>
             </div>
 
             <div>
                 <label for="">
-                    <input type="text" placeholder=" Password" name="contrasena" class="p-1 w-80 rounded-lg border">
+                    <input type="text" placeholder=" Password" name="contrasena" class="p-1 w-80 rounded-lg border" required>
                 </label>
             </div>
 

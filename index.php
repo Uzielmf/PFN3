@@ -21,7 +21,7 @@ switch ($route) {
         break;
 
         case '/login':
-        $loginController->login($_POST["correo"]);
+        $loginController->login($_POST["correo"], $_POST["contrasena"]);
         
             break;
 
