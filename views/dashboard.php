@@ -25,7 +25,7 @@ session_start();
         // $rol = $_SESSION["user"]["rol_id"];
         //activar cuando funcione
 
-        $rol = "1";
+        $rol = $_SESSION["user"]["rol_id"];
         $usuario;
 
         switch ($rol) {

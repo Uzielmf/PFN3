@@ -5,7 +5,7 @@
     protected $db;
     protected $table = "usuarios";
 
-    public function __construc()
+    public function __construct()
     {
         $config = include($_SERVER["DOCUMENT_ROOT"] . "/config/database.php");
 
