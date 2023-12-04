@@ -3,11 +3,16 @@
 //traer controllers
 require_once "./Controllers/LoginController.php";
 require_once "./Controllers/ClaseController.php";
-
+require_once "./Controllers/AlumnoController.php";
+require_once "./Controllers/MaestroController.php";
+require_once ".//Controllers/PermisoController.php";
 
 //controladores
 $loginController = new LoginController();
 $claseController = new ClaseController();
+$alumnoController= new Alumnocontroller();
+$maestroController= new MaestroController();
+$permisoController= new PermisoController();
 
 //ENRUTADOR
 $route = $_SERVER["REQUEST_URI"];
@@ -28,56 +33,78 @@ switch ($route) {
     case '/dashboard':
         include "./views/dashboard.php";
         break;
-
-        case "/dashboard";
         
 
         //Alumnos desde admin
 
     case '/admin/alumnos/read':
-        include "./views/adminAlumosRead.php";
+        $alumnoController->index();
         break;
 
-    case '/admin/alumnos/edit':
+    case '/alumnos/edit':
         echo 'aqui estas editando un alumno';
         break;
 
-    case '/admin/alumnos/create':
-        echo 'aqui estas creando un alumno';
+    case '/alumnos/form/create':
+        $alumnoController->create();
         break;
+
+     case '/alumnos/create':
+        $alumnoController->store($_POST);
+        break;   
+
+        case '/alumnos/delete':
+            $alumnoController->delete($_POST["id"]);
+            break;
 
         //maestros desde admin
         case '/admin/maestros/read':
-            include "./views/adminMaestrosRead.php";
+            $maestroController->index();
             break;
     
-        case '/admin/maestros/edit':
+        case '/maestros/edit':
             echo 'aqui estas editando un maestro';
             break;
     
-        case '/admin/maestros/create':
-            echo 'aqui estas creando un maestro';
-            break;
+            case '/maestros/form/create':
+                $maestroController->create();
+                break;
+        
+             case '/maestros/create':
+                $maestroController->store($_POST);
+                break; 
+
+            case '/maestros/delete':
+                $maestroController->delete($_POST["id"]);
+                break;
 
             //clases desde admin
             case '/admin/clases/read':
                 $claseController->index();
                 break;
         
-            case '/admin/clases/edit':
+            case '/clases/edit':
                 echo 'aqui estas editando un clase';
                 break;
         
-            case '/admin/clases/create':
-                echo 'aqui estas creando un clase';
-                break;
+                case '/clases/form/create':
+                    $claseController->create();
+                    break;
+            
+                 case '/clases/create':
+                    $claseController->store($_POST);
+                    break; 
+
+                case '/clases/delete':
+                    $claseController->delete($_POST["id"]);
+                    break;
 
             // permisos desde admin
             case '/admin/permisos/read':
-                echo 'aqui estara viendo los permisos';
+                $permisoController->index();
                 break;
         
-            case '/admin/clpermisosases/edit':
+            case '/permisos/edit':
                 echo 'aqui estas editando un permiso';
                 break;
 

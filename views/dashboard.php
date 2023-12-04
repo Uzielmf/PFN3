@@ -30,15 +30,15 @@ session_start();
 
         switch ($rol) {
             case '1':
-                include "./views/menuAdmin.php";
+                include "./views/menus/menuAdmin.php";
                 $usuario = "Administrador";
                 break; 
                 case '2':
-                    include "./views/menuMaestros.php";
+                    include "./views/menus/menuMaestros.php";
                     $usuario = "Maestro";
                     break;
                     case '3':
-                        include "./views/menuAlumnos.php";
+                        include "./views/menus/menuAlumnos.php";
                         $usuario = "Alumno";
                         break;
             
