@@ -18,7 +18,7 @@
 
         <!-- div contenedor del menu lateral de opciones -->
         <?php
-        include "./views/menuAdmin.php"
+        include "./views/menus/menuAdmin.php"
         ?>
 
 
@@ -60,25 +60,48 @@
 
                 <!-- header del dashboard -->
                 <div class="flex justify-between p-3">
-                    <p class="text-xl">Lista de Clases</p>
+                    <p class="text-xl">Crear nuevo Maestro</p>
 
                     <div class="items-center">
-                        <p class="text-sm"> Home / Clases </p>
+                        <p class="text-sm"> Home / Maestros </p>
                     </div>
                 </div>
 
 
                 <!-- bienvenida al dashboard -->
 
-                <div class="bg-[#ffffff] shadow w-1/2 p-3 m-4 text-gray-600">
-                    <p>Aqui ira la lista de las clases</p>
-                    <p class="text-sm">aqui pondremos nuestras clases</p>
+                <div class="mt-10 bg-slate-200 w-2/3 mx-auto rounded-xl shadow">
+
+                    <form action="/maestros/create" method="post" class="grid grid-rows-5 gap-5 justify-center py-14 text-center">
+                        <div>
+                            <label for="">Nombre del maestro</label> <br>
+                            <input type="text" name="nombre" required class="rounded-lg">
+                        </div>
+                        <div>
+                            <label for="">Correo Electronico</label><br>
+                            <input type="email" name="correo" required class="rounded-lg">
+                        </div>
+                        <div>
+                            <label for="">Direccion</label><br>
+                            <input type="text" name="direccion" required class="rounded-lg">
+                        </div>
+                        <div>
+                            <label for="">Fecha de Nacimiento</label><br>
+                            <input type="text" name="fecha_nacimiento" required class="rounded-lg">
+                        </div>
+                        <!-- <div>
+                            <label for="">Clase asignada</label><br>
+                            <input type="text" name="id_clase" class="rounded-lg">
+                        </div> -->
+
+                        <button type="submit" class="my-5 p-3 text-white bg-slate-500 rounded-xl hover:bg-slate-600">Guardar</button>
+                    </form>
+
+
                 </div>
 
             </div>
-
         </div>
-    </div>
 
 </body>
 

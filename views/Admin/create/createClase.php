@@ -18,7 +18,7 @@
 
         <!-- div contenedor del menu lateral de opciones -->
         <?php
-        include "./views/menuAdmin.php"
+        include "./views/menus/menuAdmin.php"
         ?>
 
 
@@ -48,7 +48,7 @@
 
                 <!-- derecha del nav -->
                 <div>
-                    <p>Alumno</p>
+                    <p>Administrador</p>
                 </div>
 
             </div>
@@ -60,25 +60,37 @@
 
                 <!-- header del dashboard -->
                 <div class="flex justify-between p-3">
-                    <p class="text-xl">Lista de Alumnos</p>
+                    <p class="text-xl">Crear nueva Clase</p>
 
                     <div class="items-center">
-                        <p class="text-sm"> Home / Alumnos </p>
+                        <p class="text-sm"> Home / Clases </p>
                     </div>
                 </div>
 
 
                 <!-- bienvenida al dashboard -->
 
-                <div class="bg-[#ffffff] shadow w-1/2 p-3 m-4 text-gray-600">
-                    <p>Aqui ira la lista de los Alumnos</p>
-                    <p class="text-sm">aqui pondremos nuestros Alumnos</p>
+                <div class="mt-10 bg-slate-200 w-2/3 mx-auto rounded-xl shadow">
+
+                    <form action="/clases/create" method="post" class="grid grid-rows-5 gap-5 justify-center py-14 text-center">
+                        <div>
+                            <label for="">Clase</label> <br>
+                            <input type="text" name="clase" required class="rounded-lg">
+                        </div>
+                        <!-- <div>
+                            <label for="">Maestro que la impartira</label><br>
+                            <input type="text" name="id_maestro"  class="rounded-lg">
+                        </div> -->
+                        
+
+                        <button type="submit" class="my-5 p-3 text-white bg-slate-500 rounded-xl hover:bg-slate-600">Guardar</button>
+                    </form>
+
+
                 </div>
 
             </div>
-
         </div>
-    </div>
 
 </body>
 
